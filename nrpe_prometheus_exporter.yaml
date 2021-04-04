@@ -1,0 +1,11 @@
+port: 2112
+instance: check-unit-1
+host: test-host-1
+site: test-site-1
+checks:
+  - name: check_disk_root
+    command: /usr/lib/nagios/plugins/check_disk -u GB -w 25% -c 20% -K 5% -p /
+  - name: check_load
+    command: /usr/lib/nagios/plugins/check_load -w 256,128,64 -c 512,256,128
+  - name: check_test
+    command: /usr/bin/echo RandomText
